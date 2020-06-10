@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Weather App build with React Hooks & Context and OpenWeatherMap API, allows you check couple information for any 3x locations and save everything in local storage. Enjoy.  
 
 ## Available Scripts
 
