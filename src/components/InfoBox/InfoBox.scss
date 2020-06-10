@@ -1,0 +1,130 @@
+@import '../styles/config';
+
+
+.container-info{
+  position: fixed;
+  width: 100%;
+  height:140vh;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0, 0.8);
+  overflow: auto;
+  z-index: 5;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.info-box {
+  position: fixed;
+  width: 90%;
+  height: 33rem;
+  margin: 10rem 0 0 0;
+  background: $lightgrey;
+  color: $orange;
+  border: 0.4rem solid $orange;
+  box-shadow: 0 0 0.5rem $primary-color;
+  border-radius: 0.5rem;
+  
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.title-info{
+  @include flex-center(row);
+  padding: 1.3rem;
+  @include bg-black;
+  font-size: 1.8rem;
+  border-bottom: 0.2rem solid $black;
+}
+
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  font-weight: bold;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  color: $primary-color;
+}
+
+.back-item{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0.3rem;
+  border-top: 0.2rem solid $primary-color;
+}
+
+.back-btn{
+  @include flex-center(row);
+  @include bg-black;
+  margin: 0 1rem 0 0;
+  padding: 0.8rem 1.4rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 0.4rem;
+  overflow: hidden;
+  transition: all 0.1s linear;
+
+  .text {
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    transition: all 0.3s 0.1s linear;
+  }
+}
+
+.back-icon {
+  margin: 0 1rem 0.4rem 0;
+  font-size: 1.8rem;
+  transition: all 0.3s linear;
+}
+
+.back-icon--active {
+  transform: translateX(-10rem);
+}
+
+.text--move{
+  transform: translateX(-2rem)
+} 
+
+.close-btn{
+  @include bg-black;
+  position: absolute;
+  width: 3rem;
+  height: 3rem;
+  right: -5%;
+  top: -6%;
+  border: none;
+  border-radius: 50%;
+  font-weight: bold;
+}
+
+
+@media (min-width: 768px) {
+  .info-box{
+    width: 70%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .info-box{
+    height: 40rem;
+    width: 40%;
+  }
+
+  .close-btn {
+    right: -4%;
+    top: -5%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .info-box{
+    height: 40rem;
+    width: 30%;
+  }
+}

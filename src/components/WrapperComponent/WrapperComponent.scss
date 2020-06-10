@@ -1,0 +1,23 @@
+@import '../styles/config';
+
+.wrapper{
+  min-height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow:hidden;
+}
+
+.wrapper--active {
+  opacity: 1;
+}
+
+.wrapper--active::after {
+  min-height: 100vh;
+  width: 100%;
+  content: '';
+  position: fixed;
+  top: 0rem;
+  left: 0;
+  background-color: $black;
+  opacity: 0.8;
+}

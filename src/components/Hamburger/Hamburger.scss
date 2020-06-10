@@ -1,0 +1,75 @@
+@import '../styles/config';
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+
+  span{
+    width: 32px;
+    height: 4px;
+    margin: 4px;
+    background-color: $orange;
+    border-radius: 2px;
+    opacity: 1;
+    transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+
+  span:nth-of-type(2) {
+    transition-delay: 0.05s;
+  }
+}
+
+.hamburger-show {
+  visibility: visible;
+}
+
+.hamburger-hide {
+  visibility: hidden;
+}
+
+
+span.open:nth-of-type(1){
+  transform: rotate(45deg) translateY(16px);
+}
+
+span.open:nth-of-type(2){
+  opacity: 0;
+}
+
+span.open:nth-of-type(3){
+  transform: rotate(-45deg) translateY(-16px);
+}
+
+span.close:nth-of-type(1){
+  transform: rotate(0) translateY(0);
+}
+
+span.close:nth-of-type(2){
+  opacity: 1;
+}
+
+span.close:nth-of-type(3){
+  transform: rotate(0) translateY(0);
+}
+
+
+// @media (min-width: 768px) {
+//   .hamburger {
+//     span {
+//     width: 40px;
+//     height: 7px;
+//     margin: 7px;
+//     }
+//   }
+
+//   span.open:nth-of-type(1) {
+//     transform: rotate(45deg) translateY(20px);
+//   }
+
+//   span.open:nth-of-type(3) {
+//     transform: rotate(-45deg) translateY(-20px);
+//   }
+  
+  
+// }

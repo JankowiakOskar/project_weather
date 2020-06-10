@@ -1,0 +1,10 @@
+@import '../styles/config';
+
+
+.dots-ctn {
+  position: absolute;
+  width: 100%;
+  top: 40%;
+  left: 0;
+  @include flex-center(row);
+}

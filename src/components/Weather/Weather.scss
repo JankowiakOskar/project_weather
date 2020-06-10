@@ -1,0 +1,276 @@
+@import '../styles/config';
+
+.container{
+  width: 100%;
+  margin: 3rem auto;
+}
+
+.weather{
+  width: 90%;
+  min-height: 100%;
+  margin: 0 auto;
+  
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr 3.5fr;
+  grid-template-areas:
+    "city"
+    "currWeather"
+    "more-info"
+    "forecast";
+}
+
+.title-ctn {
+  grid-area: city;
+  width: 100%;
+  @include flex-center(row);
+
+  .city-name {
+    width: 85%;
+    padding: 1rem 2rem;
+    margin: 0 0.2rem 2rem;
+    color:$black;
+    font-size: 2.6rem;
+    letter-spacing: 0.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 0 0 0.2rem $primary-color;
+    text-align: center;
+    border-top: 0.2rem solid $black;
+    border-bottom: 0.2rem solid $black;
+  }
+}
+
+.curr-weather {
+  grid-area: currWeather;
+  background: linear-gradient(to bottom right, $primary-color, $black);
+  color: $orange;
+  font-size: 1.3rem;
+  border: 0.3rem solid $black;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 0.3rem #000;
+
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas: 
+    "iconWeather currTemp"
+    "iconWeather currPressure";
+
+  .weatherIcon {
+    grid-area: iconWeather;
+    @include flex-center(column);
+    border-right: 0.2rem solid $orange;
+
+    img {
+      width: 8rem;
+      height: 8rem;
+    }
+  }
+
+  .curr-temp {
+    grid-area: currTemp;
+    @include flex-center(row);
+    margin: 0.5rem 0 0;
+  }
+
+  .curr-pressure {
+    grid-area: currPressure;
+    @include flex-center(row);
+    border-top: 0.2rem solid $orange;
+  }
+
+  .curr-temp, .curr-pressure {
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 0 0 0.1rem $black;
+    letter-spacing: 0.02rem;
+  }
+
+}
+
+.unit-pressure, .unit-temp {
+  margin-left: 1rem;
+  text-transform: none;
+}
+
+.more-info {
+  grid-area: more-info;
+  @include flex-center(column);
+  margin: 1rem 0 1rem 0;
+
+  .btn-info {
+    @include flex-center(row);
+    padding: 0.8rem 1rem;
+    background: linear-gradient(to bottom, green, $primary-color);
+    color: $white;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: 0.25rem solid black;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 0.3rem $black;
+    cursor: pointer;
+    transition: all 0.1s linear;
+  }
+}
+
+.fa-info-circle {
+  font-size: 2.3rem;
+  margin-left: 1rem;
+}
+
+.forecast{
+  grid-area: forecast;
+  background: linear-gradient(to bottom right, $primary-color, $black);
+  box-shadow: 0 0 0.3rem $black;
+  text-shadow: 0 0 0.01rem $primary-color;
+  border: 0.3rem solid $black;
+  border-radius: 0.5rem;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(5, 1fr);
+
+  .description {
+    @include flex-center(column);
+    color: $orange;
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+}
+
+.weather-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1.4rem;
+  color: $orange;
+  border-bottom: 0.2rem solid $black;
+}
+
+.weather-item:last-of-type {
+  border: none;
+}
+
+.day, .icon-ctn, .forecast-temp {
+  flex: 1;
+  @include flex-center(row);
+  
+}
+
+.day, .forecast-temp {
+  font-weight: bold;
+  font-size: 1.3rem;
+  text-shadow: 0 0 0.5rem $black;
+}
+
+
+
+
+.msg {
+  max-width: 85%;
+  margin: 0 auto;
+  @include flex-center(column);
+  height: 18rem;
+  padding: 1rem;
+  font-size: 1.7rem;
+  color: $primary-color;
+  border-bottom: 0.3rem solid $black;
+  border-top: 0.3rem solid $black;
+
+  p {
+    width: 95%;
+    height: 20rem;
+    padding: 1rem 0 0 0;
+    font-weight: bold;
+    text-align: left;
+    
+  }
+
+  .fa-eye-slash {
+    margin-left: 0.5rem;
+    font-size: 2rem;
+  }
+}
+
+.btn-ok {
+  @include flex-center(column);
+  margin: 1rem 0 0 0;
+  height: 7rem;
+  width: 11rem;
+  padding: 1rem;
+  background: $black;
+  color: $orange;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: 0.15rem solid $orange;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.1s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+@media (min-width:320px){
+  .msg{
+    p{
+      width: 97%;
+    }
+  }
+}
+
+@media (min-width:768px) {
+  .container {
+    width: 92%;
+  }
+
+  .msg{
+    width: 80%;
+    p{
+      width: 80%;
+    }
+  }
+}
+
+@media (min-width:768px) and (orientation: portrait) {
+  .container {
+    width: 90%;
+  }
+}
+
+@media (min-width: 768px) and (orientation: landscape) {
+
+  .weather {
+    grid-template-rows: 1fr 1.3fr 1fr 3.5fr;
+  }
+  .container {
+    width: 60%;
+  }
+
+}
+
+@media (min-width: 1024px) and (orientation: portrait) {
+  .container {
+    width: 85%;
+  }
+}
+
+@media (min-width: 768px) and (orientation: landscape) {
+  .container {
+    width: 47%;
+  }
+
+}
+
+@media  (min-width:1200px) and (orientation:landscape) {
+  .btn-ok:hover {
+    transform: scale(1.1);
+    background-color: $primary-color;
+    color: $white;
+  }
+
+  .btn-info:hover {
+    transform: scale(1.05);
+    background-color: $primary-color;
+    color: $white;
+  }
+}

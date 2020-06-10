@@ -1,0 +1,36 @@
+@import '../styles/config';
+
+
+.navbar {
+  position: fixed;
+  right: 0;
+  left: 0;
+  max-width: 1300px;
+  margin: 0 auto;
+  @include flex-center(column);
+  width: 100%;
+  height: 7rem;
+  background: $black;
+  border-bottom: 0.3rem solid $orange;
+  border-radius: 0 0 3rem 3rem;
+  z-index: 3;
+}
+
+.container-navbar{
+  margin: 0 auto;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title-app {
+  color: $orange;
+  font-size: 2rem;
+  text-shadow: 0 0 0.15rem;
+}
+
+.title{
+  margin: 0 1rem 0 0;
+}
+

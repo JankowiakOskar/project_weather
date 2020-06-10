@@ -1,0 +1,70 @@
+@import '../styles/config';
+
+.form {
+  @include flex-center(column);
+  padding: 10rem 0 0 0;
+}
+
+.input-icon {
+  position: relative;
+}
+.search {
+  width: 30rem;
+  padding: 1.5rem 2rem;
+  margin: 0 0 2rem 0;
+  background-color: $white;
+  color: $orange;
+  border: 0.4rem solid $black;
+  border-radius: 0 0 0.8rem 0.8rem;
+  outline: none;
+}
+
+.fa-search-location {
+  color: $orange;
+  position: absolute;
+  right: 5%;
+  top: 18%;
+  font-size: 2.5rem;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: $orange;
+  font-weight: bold;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: $orange;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: $orange;
+}
+
+
+.btn-weather {
+  width: 20rem;
+  height: 5rem;
+  padding: 1rem;
+  background: $orange;
+  font-size: 1.4rem;
+  font-weight: bold;
+  border: 0.4rem solid #000;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.1s linear;
+
+  span {
+    @include flex-center(row);
+  }
+
+  .loading-circles, i {
+    margin: 0 1rem 0 0;
+  }
+
+  i {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+}

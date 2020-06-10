@@ -1,0 +1,94 @@
+@import '../styles/config';
+
+.box-container{
+  padding: 15rem 0 0 0;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 25rem;
+  width: 85%;
+  margin: 0 auto;
+  background: $orange;
+  border: 0.2rem solid $black;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 0.2rem $black;
+
+  .description-app, .press-start {
+    padding: 2rem 1rem;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-align: center;
+  }
+
+
+  
+}
+
+
+.btn-start {
+  width: 15rem;
+  padding: 1rem 1.5rem;
+  background: $primary-color;
+  color: $orange;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.4rem;
+  border: 0.3rem solid $black;
+  border-radius: 0.5rem;
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+
+@media (min-width: 375px) {
+  .box {
+    height: 24rem;
+
+    .description-app, .press-start {
+      font-size: 1.5rem;
+      padding: 2rem 0.5rem;
+    }
+  }
+}
+
+@media (min-width: 400px) {
+  .box {
+
+    .description-app, .press-start {
+      padding: 2rem 0.5rem;
+    }
+  }
+  
+}
+
+@media (min-width: 414px) {
+  .box {
+
+    .description-app, .press-start {
+      padding: 2rem 1rem;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .box {
+    width: 70%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .box {
+    width: 40%;
+  }
+}
+
+
+@media (min-width: 1200px) {
+  .btn-start:hover {
+    background-color: #000;
+    transform: scale(1.1);
+  }
+}

@@ -1,0 +1,118 @@
+@import '../styles/config';
+
+
+.menu {
+  position: fixed;
+  height: 30rem;
+  max-width: 1300px;
+  width: 100%;
+  margin: 0 auto;
+  top: 7rem;
+  left: 0;
+  right: 0;
+  background: $black;
+  color: $orange;
+  border-radius: 0 0 1rem 1rem;
+  border-bottom: 0.4rem solid $black;
+  overflow: hidden;
+  z-index: 2;
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  
+}
+
+
+.menu--close {
+  transform: translateY(-35rem);
+}
+
+.menu--open {
+  transform: translateY(-1.1rem);
+}
+
+.menu-item, .menu-add-item {
+  height: 10rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2rem;
+  background: linear-gradient(to bottom right, $primary-color, $black);
+  overflow: hidden;
+}
+
+.menu-add-item {
+  width: 100%;
+}
+
+.menu-city-name, .weather-icon, .current-temp {
+  flex: 1;
+  text-align: center;
+  color: $orange;
+  font-weight: bold;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+}
+
+.add-loc {
+  flex: 1;
+  margin: 0 0 0 1rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.add-place {
+  flex: 1;
+  margin: 0 4.4rem 0 0;
+}
+
+.place{
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.btn-add, .btn-delete {
+  padding: 0.5rem 1.5rem;
+  background: $primary-color;
+  color: $orange;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: 0.3rem solid $black;
+  border-radius: 0.5rem;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.add-place {
+  padding: 0.5rem 1.5rem;
+  background: linear-gradient(to bottom, green, $primary-color);
+  color: $orange;
+  border: 0.2rem solid $orange;
+  border-radius: 0.5rem;
+}
+
+
+
+@media (min-width: 768px) {
+  .add-loc{
+    margin: 0 0 0 4rem;
+  }
+
+  .add-place {
+    margin: 0 7rem 0 0;
+  }
+}
+
+
+@media (min-width: 1024px) {
+  .add-loc{
+    margin: 0 0 0 16rem;
+  }
+
+  .add-place {
+    margin: 0 19rem 0 0;
+  }
+}
