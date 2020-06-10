@@ -7,11 +7,11 @@ Weather App build with React Hooks & Context and OpenWeatherMap API, allows you 
 Download repo and in the root folder follow these commands in terminal:
 
 ```
-cd weather-app
+npm install
 npm start
 ```
 
-App will show you in http://localhost:3000 in the browser
+App will install all req dependencies and shows you in http://localhost:3000 in the browser 
 
 
 
